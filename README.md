@@ -12,10 +12,10 @@ TODO: Write usage instructions
 
 ## Contributing
 
-1. Pull it
-2. Create your feature branch: `git checkout -b my-new-feature`
+1. Clone it
+2. Create your development branch: `git checkout -b dev-NAME`
 3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
+4. Push to the branch: `git push origin dev-NAME`
 5. Test your new features plus all existing features
 6. Merge with mainline
 
