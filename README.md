@@ -1,4 +1,4 @@
-# Project Name
+# ECE-560 Software
 
 TODO: Write a project description
 
