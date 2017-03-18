@@ -16,7 +16,7 @@ class Connection:
         self.ser = serial.Serial(port=port, baudrate=baud)
         self.inq = queue.Queue()
         self.outq = queue.Queue()
-        self.term_char = '\n'
+        self.term_char = term_char
         # Create threads for continuous read and write
         reader = threading.Thread(target=self.__continuous_read,daemon=True)
         reader.start()
