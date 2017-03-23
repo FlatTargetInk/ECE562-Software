@@ -6,7 +6,7 @@
 
 ---
 
-## README Contents
+## INFO Contents
 
 1. Configuration Used
 2. Using pyuic5.bat
