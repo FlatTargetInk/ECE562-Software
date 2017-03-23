@@ -21,6 +21,8 @@ TODO: Write usage instructions
 5. Test your new features plus all existing features
 6. Merge with mainline
 
+See file MVC-classes for specification on main classes
+
 ## License
 Unless stated otherwise all works are licensed under:
 
