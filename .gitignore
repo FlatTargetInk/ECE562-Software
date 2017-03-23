@@ -58,3 +58,6 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+
+# Ctags tags file
+tags
