@@ -1,7 +1,7 @@
 # The Viewer
 
-**Program:**		view.py
-**Version:**		Pre-Alpha
+**Program:**		view.py  
+**Version:**		Pre-Alpha  
 **Release Date:**	March 22, 2017
 
 ---
