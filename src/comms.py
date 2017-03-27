@@ -11,8 +11,9 @@ class Connection:
     inq = None # Incoming queue from serial
     outq = None # Outgoing queue to serial
     term_char = None # Terminating character decided upon between the Hardware and Software interface
+    num_chars = 1 # Number of characters in a word
 
-    def __init__(self, port='/dev/ttyUSB0', baud=9600, term_char='\n'):
+    def __init__(self, port='/dev/ttyUSB0', baud=9600, term_char=None, num_chars = 1):
         self.ser = serial.Serial(port=port, baudrate=baud)
         self.inq = queue.Queue()
         self.outq = queue.Queue()
@@ -54,18 +55,30 @@ class Connection:
 
     def __continuous_read(self):
         while True:
-            wordin = self._serial_read(term_char = self.term_char)
+            if self.term_char == None:
+                wordin = self._serial_read(num_chars = self.num_chars)
+            else:
+                wordin = self._serial_read(term_char = self.term_char)
             self.inq.put(wordin)
         return 1
 
     def __continuous_write(self):
         while True:
-            self._serial_write(self.outq.get() + self.term_char)
+            out_msg = self.outq.get()
+            if self.term_char != None:
+                out_msg += term_char
+            self._serial_write(out_msg)
         return 1
 
 def test():
+    import sys
     print("This is a test.")
     con = Connection()
+    if (len(sys.argv) > 1) and (sys.argv[1] == "-c"):
+        print("Enabling continuous read mode")
+        while True:
+            print(con.read())
+        return
     con.write(input("Enter a message to send: "))
     print("Data is in the incoming queue:",con.read_ready())
     print(con.read())
