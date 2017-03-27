@@ -1,0 +1,39 @@
+### Model-View-Controller Scheme
+
+The intent is to seperate concerns into three modules:
+#### Model
+The model will contain the information that will eventually be seen in view.
+
+Attributes will include: 
+Logical Memory contents
+Page Table contents
+Physical Memory contents
+Any other data
+
+Methods will include:
+A constructor
+A decode function which takes the string that was sent by the FPGA, and uses it to set the above attributes.
+Get functions for all attributes
+
+#### View
+View will contain all code involving visuals and user interface
+
+Attributes will include:
+A Constructor
+A Controller object
+An instance of the Qt GUI
+
+Methods will include:
+All UI events 
+
+#### Controller
+Controller will handle interaction between Model, View, and I/O. 
+
+Attributes will include:
+A Model (as an instantion argument)
+A View
+
+Methods will include:
+A Constructor
+Get methods for all Model attributes
+Reset Model

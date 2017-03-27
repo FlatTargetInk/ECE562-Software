@@ -1,6 +1,12 @@
 # ECE-562 Software
 
-TODO: Write a project description
+The basic idea:
+
+![Image of Page Table](./pagetable.png)
+
+[http://www.cs.nott.ac.uk/~pszgxk/courses/g53ops/Memory%20Management/MM10-paging.html]
+
+All modules are in python3
 
 ## Installation
 
@@ -18,6 +24,8 @@ TODO: Write usage instructions
 4. Push to the branch: `git push origin dev-NAME`
 5. Test your new features plus all existing features
 6. Merge with mainline
+
+See file MVC-classes for specification on main classes
 
 ## License
 Unless stated otherwise all works are licensed under:
