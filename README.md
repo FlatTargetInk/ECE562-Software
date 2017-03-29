@@ -6,6 +6,8 @@ The basic idea:
 
 [http://www.cs.nott.ac.uk/~pszgxk/courses/g53ops/Memory%20Management/MM10-paging.html]
 
+All modules are in python3
+
 ## Installation
 
 TODO: Describe the installation process
