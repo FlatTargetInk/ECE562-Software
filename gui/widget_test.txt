@@ -1,3 +1,0 @@
-tableView_PM
-tableView_LM
-tableWidget_LM
