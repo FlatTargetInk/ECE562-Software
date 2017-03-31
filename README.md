@@ -1,5 +1,7 @@
 # ECE-562 Software
 
+![Screenshot of App](./designer_Screenshot.PNG)
+
 The basic idea:
 
 ![Image of Page Table](./pagetable.png)
