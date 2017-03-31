@@ -1,6 +1,6 @@
 # ECE-562 Software
 
-![Screenshot of App](./designer_Screenshot.PNG)
+![Screenshot of App](./viewer_screenshot.PNG)
 
 The basic idea:
 
@@ -28,6 +28,11 @@ TODO: Write usage instructions
 6. Merge with mainline
 
 See file MVC-classes for specification on main classes
+
+## Acknowledgements
+
+Portions of the source code were generated using the script provided by morefigs/Py-Qt-MVC
+
 
 ## License
 Unless stated otherwise all works are licensed under:
