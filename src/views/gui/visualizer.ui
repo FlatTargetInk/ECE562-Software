@@ -22,7 +22,7 @@
   <property name="autoFillBackground">
    <bool>false</bool>
   </property>
-  <widget class="QLineEdit" name="lineEdit_1">
+  <widget class="QLineEdit" name="lineEdit_VMAddr0">
    <property name="geometry">
     <rect>
      <x>332</x>
@@ -58,7 +58,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
+  <widget class="QLineEdit" name="lineEdit_VMAddr1">
    <property name="geometry">
     <rect>
      <x>332</x>
@@ -91,7 +91,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_3">
+  <widget class="QLineEdit" name="lineEdit_VMAddr2">
    <property name="geometry">
     <rect>
      <x>332</x>
@@ -124,7 +124,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_4">
+  <widget class="QLineEdit" name="lineEdit_VMAddr3">
    <property name="geometry">
     <rect>
      <x>332</x>
@@ -157,7 +157,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_5">
+  <widget class="QLineEdit" name="lineEdit_VMAddr4">
    <property name="geometry">
     <rect>
      <x>332</x>
@@ -190,7 +190,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_6">
+  <widget class="QLineEdit" name="lineEdit_VMAddr5">
    <property name="geometry">
     <rect>
      <x>332</x>
@@ -223,7 +223,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_7">
+  <widget class="QLineEdit" name="lineEdit_VMAddr6">
    <property name="geometry">
     <rect>
      <x>332</x>
@@ -256,7 +256,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_8">
+  <widget class="QLineEdit" name="lineEdit_VMAddr7">
    <property name="geometry">
     <rect>
      <x>332</x>
@@ -289,7 +289,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_9">
+  <widget class="QLineEdit" name="lineEdit_VMAddr8">
    <property name="geometry">
     <rect>
      <x>332</x>
@@ -322,7 +322,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_10">
+  <widget class="QLineEdit" name="lineEdit_VMAddr9">
    <property name="geometry">
     <rect>
      <x>332</x>
@@ -355,7 +355,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_11">
+  <widget class="QLineEdit" name="lineEdit_VMAddr10">
    <property name="geometry">
     <rect>
      <x>332</x>
@@ -388,7 +388,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_12">
+  <widget class="QLineEdit" name="lineEdit_VMAddr11">
    <property name="geometry">
     <rect>
      <x>332</x>
@@ -421,7 +421,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_13">
+  <widget class="QLineEdit" name="lineEdit_VMAddr12">
    <property name="geometry">
     <rect>
      <x>332</x>
@@ -454,7 +454,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_14">
+  <widget class="QLineEdit" name="lineEdit_VMAddr13">
    <property name="geometry">
     <rect>
      <x>332</x>
@@ -487,7 +487,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_15">
+  <widget class="QLineEdit" name="lineEdit_VMAddr14">
    <property name="geometry">
     <rect>
      <x>332</x>
@@ -520,7 +520,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_16">
+  <widget class="QLineEdit" name="lineEdit_VMAddr15">
    <property name="geometry">
     <rect>
      <x>332</x>
@@ -553,7 +553,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_18">
+  <widget class="QLineEdit" name="lineEdit_PABit1">
    <property name="geometry">
     <rect>
      <x>450</x>
@@ -586,7 +586,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_19">
+  <widget class="QLineEdit" name="lineEdit_PABit2">
    <property name="geometry">
     <rect>
      <x>450</x>
@@ -619,7 +619,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_20">
+  <widget class="QLineEdit" name="lineEdit_PABit3">
    <property name="geometry">
     <rect>
      <x>450</x>
@@ -1183,7 +1183,7 @@
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_21">
+  <widget class="QLineEdit" name="lineEdit_PABit4">
    <property name="geometry">
     <rect>
      <x>450</x>
@@ -1216,7 +1216,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_22">
+  <widget class="QLineEdit" name="lineEdit_PABit5">
    <property name="geometry">
     <rect>
      <x>450</x>
@@ -1249,7 +1249,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_23">
+  <widget class="QLineEdit" name="lineEdit_PABit6">
    <property name="geometry">
     <rect>
      <x>450</x>
@@ -1282,7 +1282,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_24">
+  <widget class="QLineEdit" name="lineEdit_PABit7">
    <property name="geometry">
     <rect>
      <x>450</x>
@@ -1315,7 +1315,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_25">
+  <widget class="QLineEdit" name="lineEdit_PABit8">
    <property name="geometry">
     <rect>
      <x>450</x>
@@ -1348,7 +1348,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_26">
+  <widget class="QLineEdit" name="lineEdit_PABit9">
    <property name="geometry">
     <rect>
      <x>450</x>
@@ -1381,7 +1381,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_27">
+  <widget class="QLineEdit" name="lineEdit_PABit10">
    <property name="geometry">
     <rect>
      <x>450</x>
@@ -1414,7 +1414,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_28">
+  <widget class="QLineEdit" name="lineEdit_PABit11">
    <property name="geometry">
     <rect>
      <x>450</x>
@@ -1447,7 +1447,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_29">
+  <widget class="QLineEdit" name="lineEdit_PABit12">
    <property name="geometry">
     <rect>
      <x>450</x>
@@ -1480,7 +1480,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_30">
+  <widget class="QLineEdit" name="lineEdit_PABit13">
    <property name="geometry">
     <rect>
      <x>450</x>
@@ -1513,7 +1513,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_31">
+  <widget class="QLineEdit" name="lineEdit_PABit14">
    <property name="geometry">
     <rect>
      <x>450</x>
@@ -1546,7 +1546,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_32">
+  <widget class="QLineEdit" name="lineEdit_PABit15">
    <property name="geometry">
     <rect>
      <x>450</x>
@@ -1579,7 +1579,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_34">
+  <widget class="QLineEdit" name="lineEdit_PMAddr1">
    <property name="geometry">
     <rect>
      <x>692</x>
@@ -1609,7 +1609,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_35">
+  <widget class="QLineEdit" name="lineEdit_PMAddr2">
    <property name="geometry">
     <rect>
      <x>692</x>
@@ -1639,7 +1639,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_36">
+  <widget class="QLineEdit" name="lineEdit_PMAddr3">
    <property name="geometry">
     <rect>
      <x>692</x>
@@ -1856,7 +1856,7 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_1">
+  <widget class="QPushButton" name="pushButton_Connect">
    <property name="geometry">
     <rect>
      <x>670</x>
@@ -1883,7 +1883,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="pushButton_Disconnect">
    <property name="geometry">
     <rect>
      <x>890</x>
@@ -1902,7 +1902,7 @@
     <string>Disconnect</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_33">
+  <widget class="QLineEdit" name="lineEdit_PMAddr0">
    <property name="geometry">
     <rect>
      <x>692</x>
@@ -1932,7 +1932,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_17">
+  <widget class="QLineEdit" name="lineEdit_PABit0">
    <property name="geometry">
     <rect>
      <x>450</x>
@@ -1965,27 +1965,26 @@
     <bool>false</bool>
    </property>
   </widget>
-  <zorder>lineEdit_1</zorder>
-  <zorder>lineEdit_2</zorder>
-  <zorder>lineEdit_3</zorder>
-  <zorder>lineEdit_4</zorder>
-  <zorder>lineEdit_5</zorder>
-  <zorder>lineEdit_6</zorder>
-  <zorder>lineEdit_7</zorder>
-  <zorder>lineEdit_8</zorder>
-  <zorder>lineEdit_9</zorder>
-  <zorder>lineEdit_10</zorder>
-  <zorder>lineEdit_11</zorder>
-  <zorder>lineEdit_12</zorder>
-  <zorder>lineEdit_13</zorder>
-  <zorder>lineEdit_14</zorder>
-  <zorder>lineEdit_15</zorder>
-  <zorder>lineEdit_16</zorder>
-  <zorder>lineEdit_17</zorder>
-  <zorder>lineEdit_18</zorder>
-  <zorder>lineEdit_19</zorder>
-  <zorder>lineEdit_20</zorder>
-  <zorder>lineEdit_17</zorder>
+  <zorder>lineEdit_VMAddr0</zorder>
+  <zorder>lineEdit_VMAddr1</zorder>
+  <zorder>lineEdit_VMAddr2</zorder>
+  <zorder>lineEdit_VMAddr3</zorder>
+  <zorder>lineEdit_VMAddr4</zorder>
+  <zorder>lineEdit_VMAddr5</zorder>
+  <zorder>lineEdit_VMAddr6</zorder>
+  <zorder>lineEdit_VMAddr7</zorder>
+  <zorder>lineEdit_VMAddr8</zorder>
+  <zorder>lineEdit_VMAddr9</zorder>
+  <zorder>lineEdit_VMAddr10</zorder>
+  <zorder>lineEdit_VMAddr11</zorder>
+  <zorder>lineEdit_VMAddr12</zorder>
+  <zorder>lineEdit_VMAddr13</zorder>
+  <zorder>lineEdit_VMAddr14</zorder>
+  <zorder>lineEdit_VMAddr15</zorder>
+  <zorder>lineEdit_PABit1</zorder>
+  <zorder>lineEdit_PABit2</zorder>
+  <zorder>lineEdit_PABit3</zorder>
+  <zorder>lineEdit_PABit0</zorder>
   <zorder>label_1</zorder>
   <zorder>label_2</zorder>
   <zorder>label_3</zorder>
@@ -2006,23 +2005,22 @@
   <zorder>label_18</zorder>
   <zorder>label_19</zorder>
   <zorder>label_20</zorder>
-  <zorder>lineEdit_21</zorder>
-  <zorder>lineEdit_22</zorder>
-  <zorder>lineEdit_23</zorder>
-  <zorder>lineEdit_24</zorder>
-  <zorder>lineEdit_25</zorder>
-  <zorder>lineEdit_26</zorder>
-  <zorder>lineEdit_27</zorder>
-  <zorder>lineEdit_28</zorder>
-  <zorder>lineEdit_29</zorder>
-  <zorder>lineEdit_30</zorder>
-  <zorder>lineEdit_31</zorder>
-  <zorder>lineEdit_32</zorder>
-  <zorder>lineEdit_33</zorder>
-  <zorder>lineEdit_34</zorder>
-  <zorder>lineEdit_35</zorder>
-  <zorder>lineEdit_36</zorder>
-  <zorder>lineEdit_33</zorder>
+  <zorder>lineEdit_PABit4</zorder>
+  <zorder>lineEdit_PABit5</zorder>
+  <zorder>lineEdit_PABit6</zorder>
+  <zorder>lineEdit_PABit7</zorder>
+  <zorder>lineEdit_PABit8</zorder>
+  <zorder>lineEdit_PABit9</zorder>
+  <zorder>lineEdit_PABit10</zorder>
+  <zorder>lineEdit_PABit11</zorder>
+  <zorder>lineEdit_PABit12</zorder>
+  <zorder>lineEdit_PABit13</zorder>
+  <zorder>lineEdit_PABit14</zorder>
+  <zorder>lineEdit_PABit15</zorder>
+  <zorder>lineEdit_PMAddr1</zorder>
+  <zorder>lineEdit_PMAddr2</zorder>
+  <zorder>lineEdit_PMAddr3</zorder>
+  <zorder>lineEdit_PMAddr0</zorder>
   <zorder>label_21</zorder>
   <zorder>label_22</zorder>
   <zorder>line</zorder>
@@ -2032,8 +2030,8 @@
   <zorder>line_3</zorder>
   <zorder>line_4</zorder>
   <zorder>label_25</zorder>
-  <zorder>pushButton_1</zorder>
-  <zorder>pushButton_2</zorder>
+  <zorder>pushButton_Connect</zorder>
+  <zorder>pushButton_Disconnect</zorder>
  </widget>
  <resources/>
  <connections/>
