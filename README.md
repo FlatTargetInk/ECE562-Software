@@ -9,6 +9,7 @@ TODO: Describe the installation process
 ## Usage
 
 From within the src/ directory, execute the command
+
 `python main.py`
 
 ## Contributing
