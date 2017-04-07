@@ -1,14 +1,6 @@
 # ECE-562 Software
 
-![Screenshot of App](./viewer_screenshot.PNG)
-
-The basic idea:
-
-![Image of Page Table](./pagetable.png)
-
-[http://www.cs.nott.ac.uk/~pszgxk/courses/g53ops/Memory%20Management/MM10-paging.html]
-
-All modules are in python3
+All modules are python3
 
 ## Installation
 
@@ -16,7 +8,8 @@ TODO: Describe the installation process
 
 ## Usage
 
-TODO: Write usage instructions
+From within the src/ directory, execute the command
+`python main.py`
 
 ## Contributing
 
