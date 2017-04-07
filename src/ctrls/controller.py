@@ -1,4 +1,4 @@
-from PyQt5 import QtGui
+from PySide import QtGui
 
 class MainController(object):
 

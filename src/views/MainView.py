@@ -1,5 +1,5 @@
-from PyQt5 import QtGui
-from gui.visualizer import Ui_Dialog
+from PySide import QtGui
+from views.visualizer import Ui_Dialog
 
 class MainView(QtGui.QMainWindow):
 
@@ -472,7 +472,7 @@ class MainView(QtGui.QMainWindow):
         self.model.subscribe_update_func(self.update_ui_from_model)
 
     def build_ui(self):
-        self.ui = Ui_MainView()
+        self.ui = Ui_Dialog()
         self.ui.setupUi(self)
 
         #### set Qt model for compatible widget types ####
