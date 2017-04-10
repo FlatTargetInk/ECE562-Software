@@ -292,6 +292,6 @@ class MainView(QtGui.QMainWindow):
         self.Disconnect = self.model.Disconnect
 
     def on_Connect(self): 
-        self.main_ctrl.change_Connect(self.Connect)
+        self.main_ctrl.Connect
     def on_Disconnect(self):
-        self.main_ctrl.change_Disconnect(self.Disconnect)
+        self.main_ctrl.Disconnect
