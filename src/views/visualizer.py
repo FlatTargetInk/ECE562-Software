@@ -10,7 +10,7 @@ from PySide import QtCore, QtGui
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
-        Dialog.setObjectName("Dialog")
+        Dialog.setObjectName("Visualizer")
         Dialog.resize(1123, 916)
         font = QtGui.QFont()
         font.setBold(False)

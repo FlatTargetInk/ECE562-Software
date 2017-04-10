@@ -1,11 +1,8 @@
 from PySide import QtGui
 
 class MainController(object):
-
     def __init__(self, model):
         self.model = model
-
-    #### widget event functions ####
     def change_VMAddr0(self, text):
         self.model.VMAddr0 = text
         print('DEBUG: change_VMAddr0 called with arg value:', text)
@@ -114,9 +111,9 @@ class MainController(object):
     def change_PMAddr3(self, text):
         self.model.PMAddr3 = text
         print('DEBUG: change_PMAddr3 called with arg value:', text)
-    def change_Connect(self, checked):
-        self.model.Connect = checked
-        print('DEBUG: change_Connect called with arg value:', checked)
-    def change_Disconnect(self, checked):
-        self.model.Disconnect = checked
-        print('DEBUG: change_Disconnect called with arg value:', checked)
+    def Connect(self):
+        self.model.Connect()
+        print('DEBUG: Connect called ')
+    def Disconnect(self):
+        self.model.Disconnect()
+        print('DEBUG: Disconnect called ')

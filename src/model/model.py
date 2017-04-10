@@ -1,10 +1,29 @@
 from PySide import QtGui
 
+class Page:
+    virtAddr = None # Address in virtual memory
+    data = [] # Data within memory
+
+    # Constructor
+    def __init__(self, page_size, p_virtAddr):
+        self.data = [0 for x in range(page_size)]
+        self.virtAddr = p_virtAddr
+
 class Model(object):
+    def __init__(self, num_pages, num_frames, page_size):
+        self.virtualMem = [Page(page_size,(x*page_size)) for x in range(num_pages)]
+        self.physicalMem = [0 for x in range(num_frames)]
+        self.pagetable = [(0,False) for x in range(num_pages)]
+        self.curAddr = None # Current address of FPGA
+        self.reqVAddr = None
+        self.pageResult = None
+        self.reqVOff = None
+        self.valid = None
+        self.reqPhAddr = None
+        self.pageOut = None
+        self.pageIn = None
+        self.fifo = []
 
-    #### properties for value of Qt model contents ####
-
-    def __init__(self):
         self._update_funcs = []
         self.config_section = 'settings'
         self.config_options = (
@@ -101,3 +120,23 @@ class Model(object):
     def announce_update(self):
         for func in self._update_funcs:
             func()
+
+    # Load page from virtual memory to physical memory
+    def _pagein(self, pagenum, framenum):
+        # Place page into physical memory
+        self.physicalMem[framenum] = self.virtualMem[pagenum]
+        # Update page table
+        self.pagetable[pagenum] = (framenum,True)
+        # Update variables
+        self.pageIn = pagenum
+
+    # Remove page from physical memory
+    def _pageout(self, pagenum, framenum):
+        # Remove page from physical memory
+        self.physicalMem[framenum] = 0
+        # Update page table
+
+    # Parse input
+    def parsein(self, msg):
+        # TODO Determine messages, create parsing techniques for messages
+        return 0
