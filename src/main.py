@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import sys
 from PySide import QtGui
 from model.model import Model
