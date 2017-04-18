@@ -2,8 +2,9 @@
 
 All modules are python3
 
-To generate meeting minutes useL
-`git log --pretty=format:"%ad - %an: %s" > meetingminutes.txt
+To generate meeting minutes style git log use:
+
+`git log --pretty=format:"%ad - %an: %s" > meetingminutes.txt`
 
 ## Installation
 
