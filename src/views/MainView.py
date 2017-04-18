@@ -1,5 +1,5 @@
 from PySide import QtGui
-from views.visualizer import Ui_Dialog
+from views.visualizerResize import Ui_Dialog
 
 class MainView(QtGui.QMainWindow):
 
