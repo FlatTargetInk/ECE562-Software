@@ -11,19 +11,6 @@ class Page:
 
 class Model(object):
     def __init__(self, num_pages, num_frames, page_size):
-        self.virtualMem = [Page(page_size,(x*page_size)) for x in range(num_pages)]
-        self.physicalMem = [0 for x in range(num_frames)]
-        self.pagetable = [(0,False) for x in range(num_pages)]
-        self.curAddr = None # Current address of FPGA
-        self.reqVAddr = None
-        self.pageResult = None
-        self.reqVOff = None
-        self.valid = None
-        self.reqPhAddr = None
-        self.pageOut = None
-        self.pageIn = None
-        self.fifo = []
-
         self._update_funcs = []
         self.config_section = 'settings'
         self.config_options = (
@@ -120,13 +107,91 @@ class Model(object):
     def announce_update(self):
         for func in self._update_funcs:
             func()
+    
+    def setVMAddr(self,index,val):
+        if index == 0:
+            self.VMAddr0 = val
+        elif index == 1:
+            self.VMAddr1 = val
+        elif index == 2:
+            self.VMAddr2 = val
+        elif index == 3:
+            self.VMAddr3 = val
+        elif index == 4:
+            self.VMAddr4 = val
+        elif index == 5:
+            self.VMAddr5 = val
+        elif index == 6:
+            self.VMAddr6 = val
+        elif index == 7:
+            self.VMAddr7 = val
+        elif index == 8:
+            self.VMAddr8 = val
+        elif index == 9:
+            self.VMAddr9 = val
+        elif index == 10:
+            self.VMAddr10 = val
+        elif index == 11:
+            self.VMAddr11 = val
+        elif index == 12:
+            self.VMAddr12 = val
+        elif index == 13:
+            self.VMAddr13 = val
+        elif index == 14:
+            self.VMAddr14 = val
+        elif index == 15:
+            self.VMAddr15 = val
+
+    def setPMAddr(self,index,val):
+        if index == 0:
+            self.PMAddr0 = val
+        elif index == 1:
+            self.PMAddr1 = val
+        elif index == 2:
+            self.PMAddr2 = val
+        elif index == 3:
+            self.PMAddr3 = val
+
+    def setPABit(self,index,val):
+        if index == 0:
+            self.PABit0 = val
+        elif index == 1:
+            self.PABit1 = val
+        elif index == 2:
+            self.PABit2 = val
+        elif index == 3:
+            self.PABit3 = val
+        elif index == 4:
+            self.PABit4 = val
+        elif index == 5:
+            self.PABit5 = val
+        elif index == 6:
+            self.PABit6 = val
+        elif index == 7:
+            self.PABit7 = val
+        elif index == 8:
+            self.PABit8 = val
+        elif index == 9:
+            self.PABit9 = val
+        elif index == 10:
+            self.PABit10 = val
+        elif index == 11:
+            self.PABit11 = val
+        elif index == 12:
+            self.PABit12 = val
+        elif index == 13:
+            self.PABit13 = val
+        elif index == 14:
+            self.PABit14 = val
+        elif index == 15:
+            self.PABit15 = val
 
     # Load page from virtual memory to physical memory
     def _pagein(self, pagenum, framenum):
         # Place page into physical memory
         self.physicalMem[framenum] = self.virtualMem[pagenum]
         # Update page table
-        self.pagetable[pagenum] = (framenum,True)
+        self.validbit[pagenum] = True
         # Update variables
         self.pageIn = pagenum
 
@@ -139,4 +204,19 @@ class Model(object):
     # Parse input
     def parsein(self, msg):
         # TODO Determine messages, create parsing techniques for messages
+        msg_type = msg[1] & 0xE0
+        if msg_type == 128:
+            # Valid Read
+            phy_addr = msg[1] & 0x0F
+            vm_addr = msg[0] & 0xFC
+        elif msg_type == 64:
+            # Page Fault
+            phy_addr = msg[1] & 0x0F
+            frame_num = phy_addr & 0x0C
+            vm_out = msg[0] & 0xF0
+            vm_in = msg[0] & 0x0F
+            self._pageout(vm_out, frame_num)
+            self._pagein(vm_in, frame_num)
+        else:
+            return -1
         return 0
