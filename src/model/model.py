@@ -108,7 +108,7 @@ class Model(object):
         for func in self._update_funcs:
             func()
     
-    def setVMAddr(self,index,val):
+    def __setVMAddr(self,index,val):
         if index == 0:
             self.VMAddr0 = val
         elif index == 1:
@@ -141,8 +141,10 @@ class Model(object):
             self.VMAddr14 = val
         elif index == 15:
             self.VMAddr15 = val
+        else:
+            return -1
 
-    def setPMAddr(self,index,val):
+    def __setPMAddr(self,index,val):
         if index == 0:
             self.PMAddr0 = val
         elif index == 1:
@@ -151,8 +153,10 @@ class Model(object):
             self.PMAddr2 = val
         elif index == 3:
             self.PMAddr3 = val
+        else:
+            return -1
 
-    def setPABit(self,index,val):
+    def __setPABit(self,index,val):
         if index == 0:
             self.PABit0 = val
         elif index == 1:
@@ -185,6 +189,8 @@ class Model(object):
             self.PABit14 = val
         elif index == 15:
             self.PABit15 = val
+        else:
+            return -1
 
     # Load page from virtual memory to physical memory
     def _pagein(self, pagenum, framenum):
