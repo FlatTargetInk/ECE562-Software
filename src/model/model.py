@@ -10,7 +10,7 @@ class Page:
         self.virtAddr = p_virtAddr
 
 class Model(object):
-    def __init__(self, num_pages, num_frames, page_size):
+    def __init__(self):
         self._update_funcs = []
         self.config_section = 'settings'
         self.config_options = (
@@ -144,6 +144,41 @@ class Model(object):
         else:
             return -1
 
+    def __getVMAddr(self,index):
+        if index == 0:
+            return self.VMAddr0
+        if index == 1:
+            return self.VMAddr1
+        if index == 2:
+            return self.VMAddr2
+        if index == 3:
+            return self.VMAddr3
+        if index == 4:
+            return self.VMAddr4
+        if index == 5:
+            return self.VMAddr5
+        if index == 6:
+            return self.VMAddr6
+        if index == 7:
+            return self.VMAddr7
+        if index == 8:
+            return self.VMAddr8
+        if index == 9:
+            return self.VMAddr9
+        if index == 10:
+            return self.VMAddr10
+        if index == 11:
+            return self.VMAddr11
+        if index == 12:
+            return self.VMAddr12
+        if index == 13:
+            return self.VMAddr13
+        if index == 14:
+            return self.VMAddr14
+        if index == 15:
+            return self.VMAddr15
+        return -1
+
     def __setPMAddr(self,index,val):
         if index == 0:
             self.PMAddr0 = val
@@ -195,32 +230,33 @@ class Model(object):
     # Load page from virtual memory to physical memory
     def _pagein(self, pagenum, framenum):
         # Place page into physical memory
-        self.physicalMem[framenum] = self.virtualMem[pagenum]
+        self.__setPMAddr(framenum,pagenum)
         # Update page table
-        self.validbit[pagenum] = True
-        # Update variables
-        self.pageIn = pagenum
+        self.__setPABit(pagenum,True)
 
     # Remove page from physical memory
     def _pageout(self, pagenum, framenum):
         # Remove page from physical memory
-        self.physicalMem[framenum] = 0
+        self.__setPMAddr(framenum,None)
         # Update page table
+        self.__setPABit(pagenum,False)
 
     # Parse input
     def parsein(self, msg):
         # TODO Determine messages, create parsing techniques for messages
-        msg_type = msg[1] & 0xE0
-        if msg_type == 128:
+        msg_type = (msg[0] & 0xF0) >> 4
+        phy_addr = msg[0] & 0x0F
+        frame_num = (phy_addr & 0x0C) >> 2
+        if msg_type == (1 << 3):
             # Valid Read
-            phy_addr = msg[1] & 0x0F
-            vm_addr = msg[0] & 0xFC
-        elif msg_type == 64:
+            print('Valid Read')
+            vm_addr = (msg[0] & 0xFC) >> 2
+        elif msg_type == (1 << 2):
             # Page Fault
-            phy_addr = msg[1] & 0x0F
-            frame_num = phy_addr & 0x0C
-            vm_out = msg[0] & 0xF0
-            vm_in = msg[0] & 0x0F
+            print('Page Fault')
+            vm_out = (msg[1] & 0xF0) >> 4
+            vm_in = msg[1] & 0x0F
+            print('Page out:', vm_out, 'Page in:', vm_in, 'Frame num:', frame_num)
             self._pageout(vm_out, frame_num)
             self._pagein(vm_in, frame_num)
         else:
