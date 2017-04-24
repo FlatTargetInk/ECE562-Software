@@ -243,7 +243,8 @@ class Model(object):
 
     # Parse input
     def parsein(self, msg):
-        # TODO Determine messages, create parsing techniques for messages
+        msg[0] = int.from_bytes(msg[0],byteorder='big')
+        msg[1] = int.from_bytes(msg[1],byteorder='big')
         msg_type = (msg[0] & 0xF0) >> 4
         phy_addr = msg[0] & 0x0F
         frame_num = (phy_addr & 0x0C) >> 2

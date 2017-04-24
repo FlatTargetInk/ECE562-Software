@@ -1,5 +1,6 @@
 from PySide import QtGui
 from ctrls.comms import Connection
+import threading
 
 class MainController(object):
     def __init__(self, model, port):
@@ -50,6 +51,17 @@ class MainController(object):
             self.serial.write('x1x2x3')
             serial.read()
         self.serial = Connection(self.port)
+        reading = threading.Thread(target=self.reader,daemon=True)
+        reading.start()
+
 
     # def Disconnect(self):
         # self.serial.close()
+
+    def reader(self):
+        inchar = [0,0]
+        while True:
+            inchar[0] = self.serial.read()
+            inchar[1] = self.serial.read()
+            self.model.parsein(inchar)
+
