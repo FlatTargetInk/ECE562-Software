@@ -12,6 +12,7 @@ class App(QtGui.QApplication):
         self.main_controller = MainController(self.model, port)
         self.main_view = MainView(self.model, self.main_controller)
         self.main_view.show()
+        self.main_controller.change_VMAddr0('Hello')
 
 if __name__ == '__main__':
     app = App(sys.argv, '/dev/ttyUSB0')

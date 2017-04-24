@@ -13,48 +13,6 @@ class Model(object):
     def __init__(self):
         self._update_funcs = []
         self.config_section = 'settings'
-        self.config_options = (
-            ('VMAddr0', 'get'),
-            ('VMAddr1', 'get'),
-            ('VMAddr2', 'get'),
-            ('VMAddr3', 'get'),
-            ('VMAddr4', 'get'),
-            ('VMAddr5', 'get'),
-            ('VMAddr6', 'get'),
-            ('VMAddr7', 'get'),
-            ('VMAddr8', 'get'),
-            ('VMAddr9', 'get'),
-            ('VMAddr10', 'get'),
-            ('VMAddr11', 'get'),
-            ('VMAddr12', 'get'),
-            ('VMAddr13', 'get'),
-            ('VMAddr14', 'get'),
-            ('VMAddr15', 'get'),
-            ('PABit0', 'get'),
-            ('PABit1', 'get'),
-            ('PABit2', 'get'),
-            ('PABit3', 'get'),
-            ('PABit4', 'get'),
-            ('PABit5', 'get'),
-            ('PABit6', 'get'),
-            ('PABit7', 'get'),
-            ('PABit8', 'get'),
-            ('PABit9', 'get'),
-            ('PABit10', 'get'),
-            ('PABit11', 'get'),
-            ('PABit12', 'get'),
-            ('PABit13', 'get'),
-            ('PABit14', 'get'),
-            ('PABit15', 'get'),
-            ('PMAddr0', 'get'),
-            ('PMAddr1', 'get'),
-            ('PMAddr2', 'get'),
-            ('PMAddr3', 'get'),
-            ('Connect', 'getboolean'),
-            ('Disconnect', 'getboolean'),
-        )
-
-        #### create Qt models for compatible widget types ####
 
         #### model variables ####
         self.VMAddr0 = None
@@ -106,6 +64,7 @@ class Model(object):
 
     def announce_update(self):
         for func in self._update_funcs:
+            print(func)
             func()
     
     def __setVMAddr(self,index,val):

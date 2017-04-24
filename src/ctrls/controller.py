@@ -8,7 +8,9 @@ class MainController(object):
         self.port = port
         self.serial = None
 
-    def change_VMAddr0(self, text):self.model.VMAddr0 = text
+    def change_VMAddr0(self, text):
+        self.model.VMAddr0 = text
+        self.model.announce_update()
     def change_VMAddr1(self, text):self.model.VMAddr1 = text
     def change_VMAddr2(self, text):self.model.VMAddr2 = text
     def change_VMAddr3(self, text):self.model.VMAddr3 = text
