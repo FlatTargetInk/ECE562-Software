@@ -15,44 +15,46 @@ class Model(object):
         self.config_section = 'settings'
 
         #### model variables ####
-        self.VMAddr0 = None
-        self.VMAddr1 = None
-        self.VMAddr2 = None
-        self.VMAddr3 = None
-        self.VMAddr4 = None
-        self.VMAddr5 = None
-        self.VMAddr6 = None
-        self.VMAddr7 = None
-        self.VMAddr8 = None
-        self.VMAddr9 = None
-        self.VMAddr10 = None
-        self.VMAddr11 = None
-        self.VMAddr12 = None
-        self.VMAddr13 = None
-        self.VMAddr14 = None
-        self.VMAddr15 = None
-        self.PABit0 = None
-        self.PABit1 = None
-        self.PABit2 = None
-        self.PABit3 = None
-        self.PABit4 = None
-        self.PABit5 = None
-        self.PABit6 = None
-        self.PABit7 = None
-        self.PABit8 = None
-        self.PABit9 = None
-        self.PABit10 = None
-        self.PABit11 = None
-        self.PABit12 = None
-        self.PABit13 = None
-        self.PABit14 = None
-        self.PABit15 = None
-        self.PMAddr0 = None
-        self.PMAddr1 = None
-        self.PMAddr2 = None
-        self.PMAddr3 = None
-        self.Connect = None
-        self.Disconnect = None
+        self.VMAddr0 = "None"
+        self.VMAddr1 = "None"
+        self.VMAddr2 = "None"
+        self.VMAddr3 = "None"
+        self.VMAddr4 = "None"
+        self.VMAddr5 = "None"
+        self.VMAddr6 = "None"
+        self.VMAddr7 = "None"
+        self.VMAddr8 = "None"
+        self.VMAddr9 = "None"
+        self.VMAddr10 = "None"
+        self.VMAddr11 = "None"
+        self.VMAddr12 = "None"
+        self.VMAddr13 = "None"
+        self.VMAddr14 = "None"
+        self.VMAddr15 = "None"
+        self.PABit0 = "0"
+        self.PABit1 = "0"
+        self.PABit2 = "0"
+        self.PABit3 = "0"
+        self.PABit4 = "0"
+        self.PABit5 = "0"
+        self.PABit6 = "0"
+        self.PABit7 = "0"
+        self.PABit8 = "0"
+        self.PABit9 = "0"
+        self.PABit10 = "0"
+        self.PABit11 = "0"
+        self.PABit12 = "0"
+        self.PABit13 = "0"
+        self.PABit14 = "0"
+        self.PABit15 = "0"
+        self.PMAddr0 = "None"
+        self.PMAddr1 = "None"
+        self.PMAddr2 = "None"
+        self.PMAddr3 = "None"
+        self.Connect = True
+        self.Disconnect = False
+
+        self.announce_update()
 
     def subscribe_update_func(self, func):
         if func not in self._update_funcs:
@@ -189,16 +191,17 @@ class Model(object):
     # Load page from virtual memory to physical memory
     def _pagein(self, pagenum, framenum):
         # Place page into physical memory
-        self.__setPMAddr(framenum,pagenum)
+        self.__setPMAddr(framenum,str(pagenum))
         # Update page table
-        self.__setPABit(pagenum,True)
+        self.__setVMAddr(pagenum,str(framenum))
+        self.__setPABit(pagenum,"1")
 
     # Remove page from physical memory
     def _pageout(self, pagenum, framenum):
         # Remove page from physical memory
-        self.__setPMAddr(framenum,None)
+        self.__setPMAddr(framenum,"None")
         # Update page table
-        self.__setPABit(pagenum,False)
+        self.__setPABit(pagenum,"0")
 
     # Parse input
     def parsein(self, msg):
@@ -221,4 +224,5 @@ class Model(object):
             self._pagein(vm_in, frame_num)
         else:
             return -1
+        self.announce_update()
         return 0
