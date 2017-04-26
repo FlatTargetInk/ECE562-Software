@@ -53,6 +53,8 @@ class Model(object):
         self.PMAddr3 = "None"
         self.Connect = True
         self.Disconnect = False
+        self.curPHAddr = "None"
+        self.curVMAddr = "None"
 
         self.announce_update()
 
@@ -214,14 +216,20 @@ class Model(object):
             # Valid Read
             print('Valid Read')
             vm_addr = (msg[0] & 0xFC) >> 2
+            self.curPHAddr = str(phy_addr)
+            self.curVMAddr = str(vm_addr)
         elif msg_type == (1 << 2):
             # Page Fault
             print('Page Fault')
             vm_out = (msg[1] & 0xF0) >> 4
             vm_in = msg[1] & 0x0F
+            ofst = phy_addr & 0x03
+            vm_addr = (vm_in << 2) | (ofst)
             print('Page out:', vm_out, 'Page in:', vm_in, 'Frame num:', frame_num)
             self._pageout(vm_out, frame_num)
             self._pagein(vm_in, frame_num)
+            self.curPHAddr = str(phy_addr)
+            self.curVMAddr = str(vm_addr)
         else:
             return -1
         self.announce_update()

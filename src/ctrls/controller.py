@@ -46,6 +46,8 @@ class MainController(object):
     def change_PMAddr1(self, text):self.model.PMAddr1 = text
     def change_PMAddr2(self, text):self.model.PMAddr2 = text
     def change_PMAddr3(self, text):self.model.PMAddr3 = text
+    def change_curVMAddr(self, text):self.model.curVMAddr = text
+    def change_curPHAddr(self, text):self.model.curPHAddr = text
 
     def Connect(self):
         if self.serial:
@@ -55,6 +57,7 @@ class MainController(object):
         self.serial = Connection(self.port)
         reading = threading.Thread(target=self.reader,daemon=True)
         reading.start()
+        self.model.announce_update()
 
 
     # def Disconnect(self):

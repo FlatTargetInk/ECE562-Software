@@ -676,7 +676,7 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>0B - 1B</string>
+    <string>0B - 3B</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -703,7 +703,7 @@
     </font>
    </property>
    <property name="text">
-    <string>2B - 3B</string>
+    <string>4B - 7B</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -730,7 +730,7 @@
     </font>
    </property>
    <property name="text">
-    <string>4B - 5B</string>
+    <string>8B - 11B</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -757,7 +757,7 @@
     </font>
    </property>
    <property name="text">
-    <string>6B - 7B</string>
+    <string>12B - 15B</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -784,7 +784,7 @@
     </font>
    </property>
    <property name="text">
-    <string>8B - 9B</string>
+    <string>16B - 19B</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -811,7 +811,7 @@
     </font>
    </property>
    <property name="text">
-    <string>10B - 11B</string>
+    <string>20B - 23B</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -838,7 +838,7 @@
     </font>
    </property>
    <property name="text">
-    <string>12B - 13B</string>
+    <string>24B - 27B</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -865,7 +865,7 @@
     </font>
    </property>
    <property name="text">
-    <string>14B - 15B</string>
+    <string>28B - 31B</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -892,7 +892,7 @@
     </font>
    </property>
    <property name="text">
-    <string>16B - 17B</string>
+    <string>32B - 35B</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -919,7 +919,7 @@
     </font>
    </property>
    <property name="text">
-    <string>18B - 19B</string>
+    <string>36B - 39B</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -946,7 +946,7 @@
     </font>
    </property>
    <property name="text">
-    <string>20B - 21B</string>
+    <string>40B - 43B</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -973,7 +973,7 @@
     </font>
    </property>
    <property name="text">
-    <string>22B - 23B</string>
+    <string>44B - 47B</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -1000,7 +1000,7 @@
     </font>
    </property>
    <property name="text">
-    <string>24B - 25B</string>
+    <string>48B - 51B</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -1027,7 +1027,7 @@
     </font>
    </property>
    <property name="text">
-    <string>26B - 27B</string>
+    <string>52B - 55B</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -1054,7 +1054,7 @@
     </font>
    </property>
    <property name="text">
-    <string>28B - 29B</string>
+    <string>56B - 59B</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -1081,7 +1081,7 @@
     </font>
    </property>
    <property name="text">
-    <string>30B - 31B</string>
+    <string>60B - 63B</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -1105,7 +1105,7 @@
     </font>
    </property>
    <property name="text">
-    <string>0B - 1B</string>
+    <string>0B - 3B</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -1129,7 +1129,7 @@
     </font>
    </property>
    <property name="text">
-    <string>2B - 3B</string>
+    <string>4B - 7B</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -1153,7 +1153,7 @@
     </font>
    </property>
    <property name="text">
-    <string>4B - 5B</string>
+    <string>8B - 11B</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -1177,7 +1177,7 @@
     </font>
    </property>
    <property name="text">
-    <string>6B - 7B</string>
+    <string>12B - 15B</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -1832,8 +1832,8 @@
   <widget class="QLabel" name="label_25">
    <property name="geometry">
     <rect>
-     <x>520</x>
-     <y>600</y>
+     <x>440</x>
+     <y>630</y>
      <width>461</width>
      <height>131</height>
     </rect>
@@ -1965,6 +1965,61 @@
     <bool>false</bool>
    </property>
   </widget>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>499</x>
+     <y>449</y>
+     <width>291</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <family>Sans Serif</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Current Virtual Address:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="curVMAddr">
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_26">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Current Physical Address:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="curPHAddr">
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
   <zorder>lineEdit_VMAddr0</zorder>
   <zorder>lineEdit_VMAddr1</zorder>
   <zorder>lineEdit_VMAddr2</zorder>
@@ -2032,6 +2087,7 @@
   <zorder>label_25</zorder>
   <zorder>pushButton_Connect</zorder>
   <zorder>pushButton_Disconnect</zorder>
+  <zorder>verticalLayoutWidget</zorder>
  </widget>
  <resources/>
  <connections/>
