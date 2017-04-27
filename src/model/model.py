@@ -15,42 +15,42 @@ class Model(object):
         self.config_section = 'settings'
 
         #### model variables ####
-        self.VMAddr0 = "None"
+        self.VMAddr0 = "1"
         self.VMAddr1 = "None"
         self.VMAddr2 = "None"
         self.VMAddr3 = "None"
-        self.VMAddr4 = "None"
+        self.VMAddr4 = "0"
         self.VMAddr5 = "None"
         self.VMAddr6 = "None"
         self.VMAddr7 = "None"
-        self.VMAddr8 = "None"
+        self.VMAddr8 = "2"
         self.VMAddr9 = "None"
         self.VMAddr10 = "None"
         self.VMAddr11 = "None"
         self.VMAddr12 = "None"
         self.VMAddr13 = "None"
-        self.VMAddr14 = "None"
+        self.VMAddr14 = "3"
         self.VMAddr15 = "None"
-        self.PABit0 = "0"
+        self.PABit0 = "1"
         self.PABit1 = "0"
         self.PABit2 = "0"
         self.PABit3 = "0"
-        self.PABit4 = "0"
+        self.PABit4 = "1"
         self.PABit5 = "0"
         self.PABit6 = "0"
         self.PABit7 = "0"
-        self.PABit8 = "0"
+        self.PABit8 = "1"
         self.PABit9 = "0"
         self.PABit10 = "0"
         self.PABit11 = "0"
         self.PABit12 = "0"
         self.PABit13 = "0"
-        self.PABit14 = "0"
+        self.PABit14 = "1"
         self.PABit15 = "0"
-        self.PMAddr0 = "None"
-        self.PMAddr1 = "None"
-        self.PMAddr2 = "None"
-        self.PMAddr3 = "None"
+        self.PMAddr0 = "4"
+        self.PMAddr1 = "0"
+        self.PMAddr2 = "8"
+        self.PMAddr3 = "14"
         self.Connect = True
         self.Disconnect = False
         self.curPHAddr = "None"
@@ -68,7 +68,7 @@ class Model(object):
 
     def announce_update(self):
         for func in self._update_funcs:
-            print(func)
+            #print(func)
             func()
     
     def __setVMAddr(self,index,val):
@@ -207,6 +207,7 @@ class Model(object):
 
     # Parse input
     def parsein(self, msg):
+        #print(str(msg))
         msg[0] = int.from_bytes(msg[0],byteorder='big')
         msg[1] = int.from_bytes(msg[1],byteorder='big')
         msg_type = (msg[0] & 0xF0) >> 4
@@ -214,23 +215,24 @@ class Model(object):
         frame_num = (phy_addr & 0x0C) >> 2
         if msg_type == (1 << 3):
             # Valid Read
-            print('Valid Read')
-            vm_addr = (msg[0] & 0xFC) >> 2
+            #print('Valid Read')
+            vm_addr = (msg[1] & 0xFC) >> 2
             self.curPHAddr = str(phy_addr)
             self.curVMAddr = str(vm_addr)
         elif msg_type == (1 << 2):
             # Page Fault
-            print('Page Fault')
+            #print('Page Fault')
             vm_out = (msg[1] & 0xF0) >> 4
             vm_in = msg[1] & 0x0F
             ofst = phy_addr & 0x03
             vm_addr = (vm_in << 2) | (ofst)
-            print('Page out:', vm_out, 'Page in:', vm_in, 'Frame num:', frame_num)
+            #print('Page out:', vm_out, 'Page in:', vm_in, 'Frame num:', frame_num)
             self._pageout(vm_out, frame_num)
             self._pagein(vm_in, frame_num)
             self.curPHAddr = str(phy_addr)
             self.curVMAddr = str(vm_addr)
         else:
+            #print("Rx'd", msg)
             return -1
         self.announce_update()
         return 0

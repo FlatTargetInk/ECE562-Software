@@ -65,8 +65,16 @@ class MainController(object):
 
     def reader(self):
         inchar = [0,0]
+        oldchars = [0,0]
         while True:
+            oldchars[0] = inchar[0]
+            oldchars[1] = inchar[1]
             inchar[0] = self.serial.read()
             inchar[1] = self.serial.read()
-            self.model.parsein(inchar)
+            #if not (oldchars[0] == inchar[0]) and (oldchars[1] == inchar[1]):
+            if True:
+                print(inchar)
+                self.model.parsein(inchar)
+            #else:
+                #print("Duplicate detected:",inchar)
 

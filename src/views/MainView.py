@@ -263,7 +263,7 @@ class MainView(QtGui.QMainWindow):
         self.ui.pushButton_Disconnect.clicked.connect(self.on_Disconnect)
 
     def update_ui_from_model(self):
-        print('DEBUG: update_ui_from_model called')
+        #print('DEBUG: update_ui_from_model called')
         self.VMAddr0 = self.model.VMAddr0
         self.VMAddr1 = self.model.VMAddr1
         self.VMAddr2 = self.model.VMAddr2
