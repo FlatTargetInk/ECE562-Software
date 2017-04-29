@@ -1832,13 +1832,10 @@
   <widget class="QLabel" name="label_25">
    <property name="geometry">
     <rect>
-<<<<<<< HEAD
      <x>440</x>
      <y>630</y>
-=======
      <x>520</x>
      <y>640</y>
->>>>>>> cba4a8c308d163ffd4300907dd508ae8fa7287e1
      <width>461</width>
      <height>131</height>
     </rect>
@@ -1970,7 +1967,6 @@
     <bool>false</bool>
    </property>
   </widget>
-<<<<<<< HEAD
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
@@ -2025,7 +2021,6 @@
      </widget>
     </item>
    </layout>
-=======
   <widget class="QLineEdit" name="lineEdit_CurrentPaddr">
    <property name="geometry">
     <rect>
@@ -2165,7 +2160,6 @@
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
    </property>
->>>>>>> cba4a8c308d163ffd4300907dd508ae8fa7287e1
   </widget>
   <zorder>lineEdit_VMAddr0</zorder>
   <zorder>lineEdit_VMAddr1</zorder>
@@ -2234,16 +2228,13 @@
   <zorder>label_25</zorder>
   <zorder>pushButton_Connect</zorder>
   <zorder>pushButton_Disconnect</zorder>
-<<<<<<< HEAD
   <zorder>verticalLayoutWidget</zorder>
-=======
   <zorder>lineEdit_CurrentPaddr</zorder>
   <zorder>label_27</zorder>
   <zorder>lineEdit_CurrentVaddr</zorder>
   <zorder>label_29</zorder>
   <zorder>line_5</zorder>
   <zorder>line_6</zorder>
->>>>>>> cba4a8c308d163ffd4300907dd508ae8fa7287e1
  </widget>
  <resources/>
  <connections/>
