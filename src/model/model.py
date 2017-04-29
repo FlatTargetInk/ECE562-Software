@@ -215,13 +215,13 @@ class Model(object):
         frame_num = (phy_addr & 0x0C) >> 2
         if msg_type == (1 << 3):
             # Valid Read
-            #print('Valid Read')
+            print('Valid Read')
             vm_addr = (msg[1] & 0xFC) >> 2
             self.curPHAddr = str(phy_addr)
             self.curVMAddr = str(vm_addr)
         elif msg_type == (1 << 2):
             # Page Fault
-            #print('Page Fault')
+            print('Page Fault')
             vm_out = (msg[1] & 0xF0) >> 4
             vm_in = msg[1] & 0x0F
             ofst = phy_addr & 0x03
@@ -232,7 +232,7 @@ class Model(object):
             self.curPHAddr = str(phy_addr)
             self.curVMAddr = str(vm_addr)
         else:
-            #print("Rx'd", msg)
+            print("Rx'd", msg)
             return -1
         self.announce_update()
         return 0
