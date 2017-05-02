@@ -15,5 +15,5 @@ class App(QtGui.QApplication):
         #self.main_controller.change_VMAddr0('Hello')
 
 if __name__ == '__main__':
-    app = App(sys.argv, '/dev/ttyUSB0')
+    app = App(sys.argv, '/dev/ttyACM0')
     sys.exit(app.exec_())

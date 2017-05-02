@@ -231,6 +231,18 @@ class MainView(QtGui.QMainWindow):
     @Disconnect.setter
     def Disconnect(self, value):
         self.ui.pushButton_Disconnect.setChecked(value)
+    @property
+    def curPHAddr(self):
+        return self.ui.curPHAddr.text()
+    @curPHAddr.setter
+    def curPHAddr(self, value):
+        self.ui.curPHAddr.setText(value)
+    @property
+    def curVMAddr(self):
+        return self.ui.curVMAddr.text()
+    @curVMAddr.setter
+    def curVMAddr(self, value):
+        self.ui.curVMAddr.setText(value)
 
     def __init__(self, model, main_ctrl):
         self.model = model
@@ -251,7 +263,7 @@ class MainView(QtGui.QMainWindow):
         self.ui.pushButton_Disconnect.clicked.connect(self.on_Disconnect)
 
     def update_ui_from_model(self):
-        print('DEBUG: update_ui_from_model called')
+        #print('DEBUG: update_ui_from_model called')
         self.VMAddr0 = self.model.VMAddr0
         self.VMAddr1 = self.model.VMAddr1
         self.VMAddr2 = self.model.VMAddr2
@@ -290,6 +302,8 @@ class MainView(QtGui.QMainWindow):
         self.PMAddr3 = self.model.PMAddr3
         self.Connect = self.model.Connect
         self.Disconnect = self.model.Disconnect
+        self.curPHAddr = self.model.curPHAddr
+        self.curVMAddr = self.model.curVMAddr
 
     def on_Connect(self): 
         self.main_ctrl.Connect()
