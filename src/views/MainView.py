@@ -1,5 +1,5 @@
 from PySide import QtGui
-from views.visualizerResize import Ui_Dialog
+from views.visualizer import Ui_Dialog
 
 class MainView(QtGui.QMainWindow):
 
@@ -292,6 +292,6 @@ class MainView(QtGui.QMainWindow):
         self.Disconnect = self.model.Disconnect
 
     def on_Connect(self): 
-        self.main_ctrl.Connect
+        self.main_ctrl.Connect()
     def on_Disconnect(self):
         self.main_ctrl.Disconnect
