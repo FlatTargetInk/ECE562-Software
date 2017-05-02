@@ -34,19 +34,21 @@ class Connection:
 
     def _serial_read(self, num_chars=None, term_char = '\n'):
         # If chars == None, read everything out of the buffer
-        outstr = ''
+        outstr = []
         if num_chars == None:
             charin = 'deadbeef'
             while charin != term_char:
-                charin = self.ser.read().decode()
-                outstr += charin
+                charin = self.ser.read()
+                outstr.append(charin)
             return outstr
         for i in range(num_chars):
-            outstr += self.ser.read().decode()
+            outstr.append(self.ser.read())
+        if num_chars==1:
+            return outstr[0]
         return outstr
 
     def _serial_write(self, msg):
-        self.ser.write(msg.encode())
+        self.ser.write(msg)
         return
 
     def read_ready(self):
@@ -72,6 +74,10 @@ class Connection:
 
 def test():
     import sys
+    if (len(sys.argv) > 1) and (sys.argv[1] == "-h"):
+        print("""Serial test 
+        USAGE: ./comms.py [-c] [-h]""")
+        return
     print("This is a test.")
     con = Connection()
     if (len(sys.argv) > 1) and (sys.argv[1] == "-c"):
